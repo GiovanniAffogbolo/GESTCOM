@@ -1,0 +1,197 @@
+	body
+	{
+    background-image: url('2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment:cover;
+    /*font-family: 'Trebuchet MS', Arial, sans-serif;*/
+    color: #181818;
+	
+	}
+
+	/*body{
+	background-image: url('fond_gris.png');
+    }*/
+
+    #entete
+    {
+	width:962px;
+	height:65px;
+	}
+
+	#conteneur
+	{
+	background-image:url('fond_gris.png');
+	width:1000px;
+	margin:auto;
+	}
+
+	/*#menu
+	{
+		margin-left: 30px;
+	width:200px;
+	height:250px;
+	border:solid 3px black;
+	border-radius:10px;
+	box-shadow: 3px 3px 6px gray;
+	}
+
+	#menu li
+	{
+	display:block;
+	margin-right:30px;
+	}
+
+	#menu a 
+	{
+	text-decoration:none;
+	color:rgb(0, 55, 0);
+	font-weight:bold;
+	}*/
+
+
+
+	.menu
+{
+	background-color:black;
+	border: 3px  black solid;
+	border-radius:20px;
+	margin-top:20px;
+	border:solid 3px black;
+	border-radius:10px;
+	box-shadow: 3px 3px 6px gray;
+}
+
+.menu  a
+{
+	/*color:white;*/
+	text-decoration:none;
+	color:rgb(0, 55, 0);
+	font-weight:bold;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: block;
+    margin-top: 100px;
+}
+
+nav li
+{
+    /*margin-right: 10px;*/
+	margin-left: 5px;
+	margin-top: 40px;
+
+}
+
+nav a
+{
+    font-size: 1em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover,nav li.active
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+#affichage
+{
+	margin-left: 80px;
+	width:962px;
+	min-height:350px;
+	border:solid 3px black;
+	/*border-radius:10px;*/
+	box-shadow: 3px 3px 3px gray;
+	overflow:auto;
+    flex:6;
+    margin-top: 15px;
+    height:600px;
+}
+
+
+
+
+
+section
+{
+
+    display: flex;
+    /*margin-bottom: 20px;*/
+}
+
+aside
+{
+
+	
+	font-weight:2em;
+	background-image:url('33.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*article, aside
+{
+    text-align: justify;
+	height:350px;
+	/*background-image:url('images/IMG-20160713-WA0083.jpg');
+}*/
+
+/*article
+{
+    margin-left: 60px;
+    flex: 4;
+    margin-top: 200px;
+    height:600px;
+}*/
+
+#formulaire
+{
+
+	text-align: center;
+	
+}
+#bas
+	{
+		/*background-color:black;
+		border: 0px  black solid;
+		border-radius:0px;
+		margin-top:-19px; */
+		color:black; 
+		text-align:right;
+	}
+
+	/*:required
+	{
+		background-color: red ;
+	}*/
+#enregistre
+{
+		text-align: center;
+		margin-left: 150px;
+		margin-top: -200px;
+}
+	/*table
+	{
+		text-align: center;
+		margin-left: 150px;
+		margin-top: -200px;
+	}*/
+#tableclient
+{
+	text-align: center;
+		/*margin-left: 50px;*/
+}
+	fieldset
+{
+	padding: 15px 30px 30px 15px;
+	margin-top: 80px;
+	border:3px solid white;
+	height: 300px;
+
+
+ 
