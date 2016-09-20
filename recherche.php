@@ -1,3 +1,18 @@
+<?php 
+
+if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+
+{
+    ?> 
+<p style="margin-left: 400px; font-size: 20px; font-style: italic; background-color: red;">
+<?php
+
+    echo ( $_SESSION['pseudo']. ', vous êtes connecté!');
+
+
+?>
+</p>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,18 +22,18 @@
 	</head>
 	
 	<body>
-		<form method="POST" action="index.php?pg=recherche">
+		<form method="POST" action="index1.php?pg=recherche">
 
 		<table >
-	<caption>
-		<p >Sélectionner le client dont vous voulez afficher les commandes</p>
-	</caption>
+	
+		<p style=" margin-left:60px; margin-top:100px;">Sélectionner le client dont vous voulez afficher les commandes</p>
+	
 	<?php 
 		$bdd = new PDO('mysql:host=localhost;dbname=gestioncom', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));	
 		$reponse = $bdd->query('SELECT * FROM client');
 	?> 		
 	<tr>
-		<td><label style="margin-left:100px; margin-top:100px;" for="codeclient" > Code du client : </label> </td>
+		<td><label style="margin-left:100px; margin-top:200px;" for="codeclient" > Code du client : </label> </td>
 		<td>
 			<select name="codeclient">
 				<?php while($donnee= $reponse->fetch())
@@ -30,7 +45,8 @@
 	</tr>
 	
 	<tr>
-		<td><input style="margin-left:100px;" type="submit"  value="Afficher" /> </td>  
+            <td></td>
+            <td><input style="margin-left:-15px;" type="submit"  value="Afficher" /> </td>  
 		
 	</tr>
 				
@@ -42,7 +58,7 @@
 	{
 		?>
 
-		<table style="margin-left:30px; margin-top:50px;" border="3">
+		<table style="margin-left:100px; margin-top:50px;" border="3">
 
 				<tr>
 					<td>Code Client</td>
@@ -79,3 +95,14 @@
 			</table>
 	</body>
 </html>
+
+<?php
+
+ }
+ else
+{
+	header('Location:index.php');
+}
+
+
+ ?>

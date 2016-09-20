@@ -1,4 +1,17 @@
+<?php 
 
+if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+
+{
+    ?> 
+<p style="margin-left: 400px; font-size: 20px; font-style: italic; background-color: red;">
+<?php
+
+    echo ( $_SESSION['pseudo']. ', vous êtes connecté!');
+
+
+?>
+</p>
 	<fieldset>
 		<legend><h2>Remplissez le formulaire</h2></legend>
 		
@@ -34,19 +47,14 @@
 							?>
 							</select>
 
-							<select name="mois">
-
-								
-								<?php 
-									for($i=0; $i<12 ; $i++)
-									{
-								?>
-									<option value="<?php echo ($i+1); ?> "><?php echo ($i+1); ?></option>
-								<?php 
-									} 
-								?>
-							
-							</select>
+							<select name="mois">	
+                                                                <?php 
+                                                                $mois = array ('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre',);
+                                                                for($i=0; $i<12 ; $i++)
+                                                                {?>
+                                                                        <option value="<?php echo $i+1; ?>"><?php echo $mois[$i]; ?></option>
+                                                                <?php } ?>
+                                                        </select>
 							<select name="annee">
 							 	
 								<?php 
@@ -71,7 +79,7 @@
 						</tr></Br>
 						<tr>
 							<td><label for="telephone">Téléphone :</label></td>
-							<td><INPUT Name="telephone" TYPE="tel" required/></td>
+							<td><INPUT Name="telephone" TYPE="number" required/></td>
 						</tr></Br>
 						<tr>
 							<td><INPUT TYPE="submit" VALUE="ENREGISTRER" ></td>     
@@ -85,4 +93,13 @@
 			</table>
 	
 	</fieldset>
-	
+<?php
+
+ }
+ else
+{
+	header('Location:index.php');
+}
+
+
+ ?>

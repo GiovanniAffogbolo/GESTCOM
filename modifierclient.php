@@ -32,7 +32,32 @@ $id = $_GET['id'];
 						</tr></Br>
 						<tr>
 							<td><label for="datenaissance">Date de naissance :</label></td>
-							<td><INPUT Name="datenaissance" TYPE="date" value = "<?php if (!empty($donnee['datenaissance'])) {echo $donnee['datenaissance'];} ?>"required/></td>
+							<td>
+                                                            <select name="jour">	
+                                                                    <?php 
+                                                                    for($i=1; $i<=31 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+
+                                                            <select name="mois">	
+                                                                    <?php 
+                                                                    $mois = array ('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre',);
+                                                                    for($i=0; $i<12 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i+1; ?>"><?php echo $mois[$i]; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+
+                                                            <select name="annee">	
+                                                                    <?php 
+                                                                    for($i=1970; $i<=2030 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+                                                        </td>
 						</tr></Br>
 						<tr>
 							<td><label for="email">Email </label></td>:
@@ -48,7 +73,7 @@ $id = $_GET['id'];
 						</tr></Br>
 						<tr>
 							<td><INPUT TYPE="submit" name="submit" VALUE="MODIFIER" ></td>     
-							
+                                                       
 						</tr>
 			</div>
 		</form>
@@ -61,20 +86,21 @@ $id = $_GET['id'];
 
 	if (isset($_POST['submit']))
 	{
+            $date = $_POST['annee']."-".$_POST['mois']."-".$_POST['jour'];
 		$codeclient= $_POST['codeclient'];
 		$nom= $_POST['nom'];
 		$prenoms= $_POST['prenoms'];
-		$datenaissance= $_POST['datenaissance'];
+		$datenaissance= $date;
 		$email= $_POST['email'];
 		$ville= $_POST['ville'];
 		$telephone= $_POST['telephone'];
 
 		$req= $bdd->query ("UPDATE client SET  codeclient = '$codeclient', nom = '$nom', prenoms = '$prenoms', datenaissance= '$datenaissance', email= '$email', ville= '$ville', telephone= '$telephone' WHERE id='$id' ");
 		
-		print_r($req);
+		
 		if($req == true)
 		{
-			header('Location: index.php?pg=clients');
+			header('Location: index1.php?pg=clients');
 			echo 'modification effectuée avec succès!';	
 		}
 

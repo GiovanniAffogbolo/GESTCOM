@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 14 Septembre 2016 à 18:39
+-- Généré le :  Dim 18 Septembre 2016 à 11:20
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -31,12 +31,12 @@ CREATE TABLE IF NOT EXISTS `client` (
   `codeclient` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenoms` varchar(255) NOT NULL,
-  `datenaissance` date NOT NULL,
+  `datenaissance` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `ville` varchar(255) NOT NULL,
   `telephone` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Contenu de la table `client`
@@ -48,8 +48,7 @@ INSERT INTO `client` (`id`, `codeclient`, `nom`, `prenoms`, `datenaissance`, `em
 (30, 'BC', 'BIAOU', 'bebeto', '2016-09-12', 'bebeto@gmail.fr', 'akpakpa', 98979695),
 (31, 'KL', 'KOUAKAN', 'Lory', '2000-01-29', 'kouak@yahoo.com', 'cotonou', 61002255),
 (33, 'CCC', 'mme', 'noush', '2016-09-07', 'amir@ccc.com', 'ctn', 33333333),
-(34, 'karthvodje', 'Sir', 'joey', '2016-08-30', 'jojo@k.fr', 'calavigodomey', 66666666),
-(39, 'dernier', 'last', 'laster', '2016-09-13', 'last@last.com', 'lastville', 95956363);
+(34, 'karthvodje', 'Sir', 'joey', '2016-08-30', 'jojo@k.fr', 'calavigodomey', 66666666);
 
 -- --------------------------------------------------------
 
@@ -77,7 +76,7 @@ INSERT INTO `commande` (`id`, `codeclient`, `refcommande`, `datecommande`, `mont
 (30, 'BC', 'bc01', '2016-09-13', 50000),
 (31, 'YM', 'ym1', '2016-09-13', 1000050),
 (33, 'KL', 'kl01', '2016-09-01', 12000),
-(34, 'dernier', 'd1', '2016-09-13', 18500);
+(34, 'dernier', 'd1', '0000-00-00', 18500);
 
 -- --------------------------------------------------------
 
@@ -90,16 +89,19 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `pseudo` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `membre`
 --
 
 INSERT INTO `membre` (`id`, `pseudo`, `password`) VALUES
-(3, 'giovanni', '037c70dbc1c812f6b2091688804d7b17'),
-(5, 'isodoss', 'a8ee44f0b9089014f16c792cc1b966d9'),
-(6, 'isodoss', 'a8ee44f0b9089014f16c792cc1b966d9');
+(8, 'monprojetphp', '8c61dbcdba0bda39a075a8430cfacdbd'),
+(9, 'autretestpseudo', 'd6a5424aa5d1eaaa77903f943e0d18cb'),
+(10, 'meriterudile', 'c07925b985dc5da641d185046cd1e5f0'),
+(11, 'didieraline', '125d358dfc2d5d491320c7d00ee3edf7'),
+(12, 'isoyanno', '5a473fabdd69ce2461c2b35c85248f91'),
+(13, 'faridakegn', '05a1168d4e174ce0377ad4c4fca9e7bf');
 
 --
 -- Contraintes pour les tables exportées

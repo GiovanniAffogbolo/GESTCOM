@@ -1,3 +1,19 @@
+<?php 
+
+if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+
+{
+    ?> 
+<p style="margin-left: 400px; font-size: 20px; font-style: italic; background-color: red;">
+<?php
+
+    echo ( $_SESSION['pseudo']. ', vous êtes connecté!');
+
+
+?>
+</p>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,8 +53,8 @@
 					<td><?php echo$donnee['refcommande'] ?></td>
 					<td><?php echo$donnee['datecommande'] ?></td>
 					<td><?php echo$donnee['montant'] ?></td>
-					<td><?php $id=$donnee['id']; echo "<a href='index.php?pg=supprimercommande&id=$id'>Supprimer</a>"; ?></td>
-					<td><?php $id=$donnee['id']; echo "<a href='index.php?pg=modifiercommande&id=$id'>Modifier</a>"; ?></td>
+					<td><?php $id=$donnee['id']; echo "<a href='index1.php?pg=supprimercommande&id=$id'>Supprimer</a>"; ?></td>
+					<td><?php $id=$donnee['id']; echo "<a href='index1.php?pg=modifiercommande&id=$id'>Modifier</a>"; ?></td>
 				</tr>
 			
 				
@@ -51,3 +67,14 @@
 			</table>
 	</body>
 </html>
+
+<?php
+
+ }
+ else
+{
+	header('Location:index.php');
+}
+
+
+ ?>

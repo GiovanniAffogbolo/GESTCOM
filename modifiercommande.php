@@ -28,7 +28,32 @@ $id = $_GET['id'];
 						</tr></Br>
 						<tr>
 							<td><label for="datecommande">Date Commande :</label></td>
-							<td><INPUT Name="datecommande" TYPE="date" value = "<?php if (!empty($donnee['datecommande'])) {echo $donnee['datecommande'];} ?>"required/></td>
+							<td>
+                                                            <select name="jour">	
+                                                                    <?php 
+                                                                    for($i=1; $i<=31 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+
+                                                            <select name="mois">	
+                                                                    <?php 
+                                                                    $mois = array ('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre',);
+                                                                    for($i=0; $i<12 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i+1; ?>"><?php echo $mois[$i]; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+
+                                                            <select name="annee">	
+                                                                    <?php 
+                                                                    for($i=1970; $i<=2030 ; $i++)
+                                                                    {?>
+                                                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                                                    <?php } ?>
+                                                            </select>
+                                                        </td>
 						</tr></Br>
 						<tr>
 							<td><label for="montant">Montant :</label></td>
@@ -59,7 +84,7 @@ $id = $_GET['id'];
 
 		$req= $bdd->query ("UPDATE commande SET  codeclient = '$codeclient', refcommande = '$refcommande', datecommande = '$datecommande', montant= '$montant' WHERE id='$id' ");
 		
-		print_r($req);
+		
 		if($req == true)
 		{
 			header('Location: index.php?pg=commandes');

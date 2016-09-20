@@ -1,0 +1,18 @@
+{
+  "name": "bootstrap",
+  "homepage": "https://github.com/GiovanniAffogbolo/GESTCOM",
+  "authors": [
+    "giovanni <affogbologiovanni@gmail.com>"
+  ],
+  "description": "integrer bootstrap avec bower",
+  "main": "bower.json",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
